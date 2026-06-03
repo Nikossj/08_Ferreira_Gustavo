@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Under - La Nueva Generación del Under</title>
+    <!-- Google Fonts: Tipografías modernas -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Configuración de Tailwind para temas oscuros y neón */
+        :root {
+            --tw-bg-opacity: 1;
+        }
+
+        /* Efectos de animación */
+        @keyframes glow-pulse {
+            0% { text-shadow: 0 0 10px rgba(179, 0, 255, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(179, 0, 255, 0.8); }
+            100% { text-shadow: 0 0 10px rgba(179, 0, 255, 0.5); }
+        }
+
+        @keyframes float-up {
+            0% { transform: translateY(0px); opacity: 0; }
+            100% { transform: translateY(-10px); opacity: 1; }
+        }
+
+        h2 {
+            animation: float-up 0.6s ease-out;
+        }
+
+        /* Estilos para tarjetas */
+        .artist-card {
+            transition: all 0.3s ease;
+        }
+
+        .artist-card:hover {
+            animation: none;
+        }
+
+        /* Estilos para botones */
+        button {
+            transition: all 0.3s ease !important;
+        }
+
+        button:hover {
+            transform: translateY(-2px) !important;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-950 via-purple-950 to-gray-900" style="font-family: 'Poppins', sans-serif;">
+
+    <!-- ============================================
+         ENCABEZADO PRINCIPAL
+         ============================================ -->
+    <header class="py-20 px-4 border-b-4 border-cyan-400 shadow-2xl position-relative overflow-hidden"
+            style="background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+                   box-shadow: 0 0 40px rgba(0, 217, 255, 0.3);">
+        
+        <!-- Fondo animado decorativo -->
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="opacity: 0.05;">
+            <div style="position: absolute; width: 300px; height: 300px; background: radial-gradient(circle, #b300ff, transparent); top: -100px; left: -100px;"></div>
+            <div style="position: absolute; width: 200px; height: 200px; background: radial-gradient(circle, #00d9ff, transparent); bottom: -50px; right: -50px;"></div>
+        </div>
+
+        <div class="container-xl text-center position-relative" style="z-index: 1;">
+            <!-- Badge/Etiqueta superior -->
+            <div class="mb-4 d-inline-block px-3 py-2 rounded-pill" style="background: rgba(0, 217, 255, 0.1); border: 1px solid rgba(0, 217, 255, 0.3);">
+                <span style="color: #00d9ff; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">🎵 Música Argentina</span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-black tracking-widest mb-4 animate-pulse"
+                style="background: linear-gradient(135deg, #b300ff, #00d9ff, #ff006e);
+                       -webkit-background-clip: text;
+                       -webkit-text-fill-color: transparent;
+                       background-clip: text;
+                       text-shadow: 0 0 30px rgba(179, 0, 255, 0.5);">
+                EL UNDER
+            </h1>
+            
+            <p class="text-lg md:text-2xl tracking-widest mb-6"
+               style="color: #00d9ff; text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);">
+                La nueva generación del under
+            </p>
+            
+            <p class="mb-6" style="color: #9a9aaa; font-size: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Descubre los mejores artistas de la escena urbana argentina. Trap, rap, reggaeton y electrónico en un solo lugar.
+            </p>
+
+            <!-- Botón CTA -->
+            <button class="px-6 py-3 rounded-pill text-white font-weight-bold text-uppercase tracking-wide transition-all duration-300"
+                    style="background: linear-gradient(135deg, #b300ff, #ff006e);
+                           border: none;
+                           box-shadow: 0 0 20px rgba(179, 0, 255, 0.6);
+                           font-size: 0.95rem;"
+                    onmouseover="this.style.boxShadow='0 0 30px rgba(255, 0, 110, 0.8)'; this.style.transform='scale(1.05)';"
+                    onmouseout="this.style.boxShadow='0 0 20px rgba(179, 0, 255, 0.6)'; this.style.transform='scale(1)';">
+                Explorar Ahora ⚡
+            </button>
+
+            <div class="mx-auto mt-6" style="width: 100px; height: 3px; background: linear-gradient(90deg, transparent, #00d9ff, transparent);"></div>
+        </div>
+    </header>
+
+    <!-- ============================================
+         CONTENEDOR PRINCIPAL
+         ============================================ -->
+    <main class="container-xl px-4 py-20">
+        <!-- SECCIÓN DE ARTISTAS -->
+        <section class="mb-20">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 tracking-widest"
+                style="color: #b300ff; text-shadow: 0 0 15px rgba(179, 0, 255, 0.8);">
+                🎤 5 ARTISTAS DESTACADOS
+            </h2>
+            
+            <!-- GRID DE ARTISTAS -->
+            <div class="row g-4 gy-5">
+
+                <!-- ============================================
+                     ARTISTA 1: Austinfortnite2008
+                     ============================================ -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <div class="artist-card h-100 rounded-lg overflow-hidden border border-purple-600 shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-purple-500"
+                         style="background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+                                border-color: rgba(179, 0, 255, 0.3);">
+                        
+                        <!-- Imagen -->
+                        <div class="position-relative overflow-hidden" style="aspect-ratio: 1;">
+                            <img src="img/Captura de pantalla 2026-05-27 113805.png" alt="Austinfortnite2008" class="w-100 h-100 object-cover">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center overlay-hover"
+                                 style="background: rgba(179, 0, 255, 0.8); opacity: 0; transition: opacity 0.4s;">
+                                <span style="color: white; font-size: 1.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Seguir</span>
+                            </div>
+                        </div>
+
+                        <!-- Info del artista -->
+                        <div class="p-4" style="background: linear-gradient(135deg, rgba(179, 0, 255, 0.05) 0%, rgba(0, 217, 255, 0.05) 100%);">
+                            <h3 class="mb-2 font-weight-bold" style="color: #00d9ff; text-transform: uppercase; letter-spacing: 1px; font-size: 1.2rem;">Austinfortnite2008</h3>
+                            <p class="mb-3 text-sm" style="color: #9a9aaa;">Trap urbano con vibes electrónicas. Pluh swag</p>
+                            <button class="w-100 py-2 rounded text-white font-weight-bold text-uppercase tracking-wide transition-all duration-300"
+                                    style="background: linear-gradient(135deg, #b300ff, #ff006e);
+                                           border: none;
+                                           box-shadow: 0 0 15px rgba(179, 0, 255, 0.5);">
+                                ♫ Ver Más
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================
+                     ARTISTA 2: Frozouda
+                     ============================================ -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <div class="artist-card h-100 rounded-lg overflow-hidden border border-purple-600 shadow-2xl transition-all duration-300 hover:scale-105"
+                         style="background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+                                border-color: rgba(179, 0, 255, 0.3);">
+                        <div class="position-relative overflow-hidden" style="aspect-ratio: 1;">
+                            <img src="img/Captura de pantalla 2026-05-27 113905.png" alt="Frozouda" class="w-100 h-100 object-cover">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center overlay-hover" style="background: rgba(179, 0, 255, 0.8); opacity: 0; transition: opacity 0.4s;">
+                                <span style="color: white; font-size: 1.5rem; font-weight: 700;">Seguir</span>
+                            </div>
+                        </div>
+                        <div class="p-4" style="background: linear-gradient(135deg, rgba(179, 0, 255, 0.05) 0%, rgba(0, 217, 255, 0.05) 100%);">
+                            <h3 class="mb-2 font-weight-bold" style="color: #00d9ff; text-transform: uppercase; letter-spacing: 1px; font-size: 1.2rem;">Frozouda</h3>
+                            <p class="mb-3 text-sm" style="color: #9a9aaa;">Rap consciente desde las calles. Mensajes reales.</p>
+                            <button class="w-100 py-2 rounded text-white font-weight-bold text-uppercase tracking-wide" style="background: linear-gradient(135deg, #b300ff, #ff006e); border: none; box-shadow: 0 0 15px rgba(179, 0, 255, 0.5);">♫ Ver Más</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================
+                     ARTISTA 3: Cluster
+                     ============================================ -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <div class="artist-card h-100 rounded-lg overflow-hidden border border-purple-600 shadow-2xl transition-all duration-300 hover:scale-105"
+                         style="background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%); border-color: rgba(179, 0, 255, 0.3);">
+                        <div class="position-relative overflow-hidden" style="aspect-ratio: 1;">
+                            <img src="img/Captura de pantalla 2026-05-27 114159.png" alt="Cluster" class="w-100 h-100 object-cover">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center overlay-hover" style="background: rgba(179, 0, 255, 0.8); opacity: 0; transition: opacity 0.4s;">
+                                <span style="color: white; font-size: 1.5rem; font-weight: 700;">Seguir</span>
+                            </div>
+                        </div>
+                        <div class="p-4" style="background: linear-gradient(135deg, rgba(179, 0, 255, 0.05) 0%, rgba(0, 217, 255, 0.05) 100%);">
+                            <h3 class="mb-2 font-weight-bold" style="color: #00d9ff; text-transform: uppercase; letter-spacing: 1px; font-size: 1.2rem;">Enzocerobulto</h3>
+                            <p class="mb-3 text-sm" style="color: #9a9aaa;">Fusión de electrónica y soul. Sonidos futuristas.</p>
+                            <button class="w-100 py-2 rounded text-white font-weight-bold text-uppercase tracking-wide" style="background: linear-gradient(135deg, #b300ff, #ff006e); border: none; box-shadow: 0 0 15px rgba(179, 0, 255, 0.5);">♫ Ver Más</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================
+                     ARTISTA 4: Zell
+                     ============================================ -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <div class="artist-card h-100 rounded-lg overflow-hidden border border-purple-600 shadow-2xl transition-all duration-300 hover:scale-105"
+                         style="background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%); border-color: rgba(179, 0, 255, 0.3);">
+                        <div class="position-relative overflow-hidden" style="aspect-ratio: 1;">
+                            <img src="img/Captura de pantalla 2026-05-27 114136.png
+                            " alt="Zell" class="w-100 h-100 object-cover">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center overlay-hover" style="background: rgba(179, 0, 255, 0.8); opacity: 0; transition: opacity 0.4s;">
+                                <span style="color: white; font-size: 1.5rem; font-weight: 700;">Seguir</span>
+                            </div>
+                        </div>
+                        <div class="p-4" style="background: linear-gradient(135deg, rgba(179, 0, 255, 0.05) 0%, rgba(0, 217, 255, 0.05) 100%);">
+                            <h3 class="mb-2 font-weight-bold" style="color: #00d9ff; text-transform: uppercase; letter-spacing: 1px; font-size: 1.2rem;">Zell</h3>
+                            <p class="mb-3 text-sm" style="color: #9a9aaa;">Drill oscuro y experimental. Sonidos únicos.</p>
+                            <button class="w-100 py-2 rounded text-white font-weight-bold text-uppercase tracking-wide" style="background: linear-gradient(135deg, #b300ff, #ff006e); border: none; box-shadow: 0 0 15px rgba(179, 0, 255, 0.5);">♫ Ver Más</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================
+                     ARTISTA 5: Luciérnaga
+                     ============================================ -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <div class="artist-card h-100 rounded-lg overflow-hidden border border-purple-600 shadow-2xl transition-all duration-300 hover:scale-105"
+                         style="background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+                                border-color: rgba(57, 255, 20, 0.3);">
+                        <div class="position-relative overflow-hidden" style="aspect-ratio: 1;">
+                            <img src="img/Captura de pantalla 2026-05-27 114227.png" alt="Luciérnaga" class="w-100 h-100 object-cover">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center overlay-hover" style="background: rgba(57, 255, 20, 0.8); opacity: 0; transition: opacity 0.4s;">
+                                <span style="color: white; font-size: 1.5rem; font-weight: 700;">Seguir</span>
+                            </div>
+                        </div>
+                        <div class="p-4" style="background: linear-gradient(135deg, rgba(179, 0, 255, 0.05) 0%, rgba(0, 217, 255, 0.05) 100%);">
+                            <h3 class="mb-2 font-weight-bold" style="color: #39ff14; text-transform: uppercase; letter-spacing: 1px; font-size: 1.2rem;">Pabloxo
+
+                            </h3>
+                            <p class="mb-3 text-sm" style="color: #9a9aaa;">Flow poético con ritmo underground. Brilla en la oscuridad.</p>
+                            <button class="w-100 py-2 rounded text-white font-weight-bold text-uppercase tracking-wide transition-all duration-300"
+                                    style="background: linear-gradient(135deg, #39ff14, #b300ff);
+                                           border: none;
+                                           box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);">
+                                ♫ Ver Más
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECCIÓN: GALERÍA UNDERGROUND
+             ============================================ -->
+        <section class="mb-20">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 tracking-widest"
+                style="color: #ff006e; text-shadow: 0 0 15px rgba(255, 0, 110, 0.8);">
+                📸 GALERÍA UNDERGROUND
+            </h2>
+            
+            <!-- Grid de dos imágenes principales -->
+            <div class="row g-4 mb-20">
+                <!-- Imagen 1 -->
+                <div class="col-12 col-lg-6">
+                    <div class="position-relative overflow-hidden rounded-lg shadow-2xl" style="aspect-ratio: 16/9;">
+                        <img src="img/Captura de pantalla 2026-06-03 112737.png" alt="Concierto Festival" class="w-100 h-100 object-cover">
+                        <div class="position-absolute bottom-0 start-0 w-100" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 2rem 1.5rem;">
+                            <h3 style="color: #00d9ff; font-size: 1.5rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">Festival Underground 2026</h3>
+                            <p style="color: #9a9aaa; font-size: 0.9rem;">La nueva generación de artistas denominado plif</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen 2 -->
+                <div class="col-12 col-lg-6">
+                    <div class="position-relative overflow-hidden rounded-lg shadow-2xl" style="aspect-ratio: 16/9;">
+                        <img src="img/Captura de pantalla 2026-06-03 112843.png" alt="Música Urbana" class="w-100 h-100 object-cover">
+                        <div class="position-absolute bottom-0 start-0 w-100" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 2rem 1.5rem;">
+                            <h3 style="color: #b300ff; font-size: 1.5rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">Cultura Urbana</h3>
+                            <p style="color: #9a9aaa; font-size: 0.9rem;">Vive la experiencia del under en vivo,  el que sabe, sabe</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECCIÓN: ESTADÍSTICAS / DETALLES
+             ============================================ -->
+        <section class="mb-20">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 tracking-widest"
+                style="color: #00d9ff; text-shadow: 0 0 15px rgba(0, 217, 255, 0.8);">
+                💯 NÚMEROS QUE HABLAN
+            </h2>
+            
+            <div class="row g-4 text-center">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="p-5 rounded-lg shadow-xl" style="background: linear-gradient(135deg, rgba(179, 0, 255, 0.1) 0%, rgba(0, 217, 255, 0.1) 100%); border: 1px solid rgba(179, 0, 255, 0.3);">
+                        <h3 class="text-3xl font-black mb-2" style="color: #b300ff; text-shadow: 0 0 10px rgba(179, 0, 255, 0.5);">5</h3>
+                        <p style="color: #00d9ff; font-weight: 600;">Artistas Destacados</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="p-5 rounded-lg shadow-xl" style="background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(255, 0, 110, 0.1) 100%); border: 1px solid rgba(0, 217, 255, 0.3);">
+                        <h3 class="text-3xl font-black mb-2" style="color: #00d9ff; text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);">7M+</h3>
+                        <p style="color: #ff006e; font-weight: 600;">Seguidores Activos</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="p-5 rounded-lg shadow-xl" style="background: linear-gradient(135deg, rgba(255, 0, 110, 0.1) 0%, rgba(57, 255, 20, 0.1) 100%); border: 1px solid rgba(255, 0, 110, 0.3);">
+                        <h3 class="text-3xl font-black mb-2" style="color: #ff006e; text-shadow: 0 0 10px rgba(255, 0, 110, 0.5);">24/7</h3>
+                        <p style="color: #39ff14; font-weight: 600;">Streaming Disponible</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="p-5 rounded-lg shadow-xl" style="background: linear-gradient(135deg, rgba(57, 255, 20, 0.1) 0%, rgba(179, 0, 255, 0.1) 100%); border: 1px solid rgba(57, 255, 20, 0.3);">
+                        <h3 class="text-3xl font-black mb-2" style="color: #39ff14; text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);">∞</h3>
+                        <p style="color: #b300ff; font-weight: 600;">Comunidad Underground</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- ============================================
+         PIE DE PÁGINA
+         ============================================ -->
+    <footer class="py-12 px-4 border-t-4 border-cyan-400"
+            style="background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+                   border-color: rgba(0, 217, 255, 0.8) !important;
+                   box-shadow: inset 0 0 30px rgba(0, 217, 255, 0.1);">
+        <div class="container-xl">
+            <!-- Sección de redes sociales -->
+            <div class="text-center mb-8">
+                <h3 style="color: #b300ff; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Síguenos</h3>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#" class="d-inline-flex align-items-center justify-content-center rounded-circle"
+                       style="width: 45px; height: 45px; background: rgba(0, 217, 255, 0.1); border: 2px solid rgba(0, 217, 255, 0.3); color: #00d9ff; transition: all 0.3s;"
+                       onmouseover="this.style.background='rgba(0, 217, 255, 0.3)'; this.style.boxShadow='0 0 15px rgba(0, 217, 255, 0.6)';"
+                       onmouseout="this.style.background='rgba(0, 217, 255, 0.1)'; this.style.boxShadow='none';">
+                        f
+                    </a>
+                    <a href="#" class="d-inline-flex align-items-center justify-content-center rounded-circle"
+                       style="width: 45px; height: 45px; background: rgba(179, 0, 255, 0.1); border: 2px solid rgba(179, 0, 255, 0.3); color: #b300ff; transition: all 0.3s;"
+                       onmouseover="this.style.background='rgba(179, 0, 255, 0.3)'; this.style.boxShadow='0 0 15px rgba(179, 0, 255, 0.6)';"
+                       onmouseout="this.style.background='rgba(179, 0, 255, 0.1)'; this.style.boxShadow='none';">
+                        𝕏
+                    </a>
+                    <a href="#" class="d-inline-flex align-items-center justify-content-center rounded-circle"
+                       style="width: 45px; height: 45px; background: rgba(255, 0, 110, 0.1); border: 2px solid rgba(255, 0, 110, 0.3); color: #ff006e; transition: all 0.3s;"
+                       onmouseover="this.style.background='rgba(255, 0, 110, 0.3)'; this.style.boxShadow='0 0 15px rgba(255, 0, 110, 0.6)';"
+                       onmouseout="this.style.background='rgba(255, 0, 110, 0.1)'; this.style.boxShadow='none';">
+                        ◆
+                    </a>
+                    <a href="#" class="d-inline-flex align-items-center justify-content-center rounded-circle"
+                       style="width: 45px; height: 45px; background: rgba(57, 255, 20, 0.1); border: 2px solid rgba(57, 255, 20, 0.3); color: #39ff14; transition: all 0.3s;"
+                       onmouseover="this.style.background='rgba(57, 255, 20, 0.3)'; this.style.boxShadow='0 0 15px rgba(57, 255, 20, 0.6)';"
+                       onmouseout="this.style.background='rgba(57, 255, 20, 0.1)'; this.style.boxShadow='none';">
+                        ▶
+                    </a>
+                </div>
+            </div>
+
+            <!-- Línea divisoria -->
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.3), transparent); margin-bottom: 1.5rem;"></div>
+
+            <!-- Información del footer -->
+            <div class="text-center">
+                <p class="mb-2" style="color: #00d9ff; font-weight: 600; text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);">
+                    &copy; 2026 El Under. La nueva generación del under.
+                </p>
+                <p style="color: #9a9aaa; font-size: 0.9rem;">
+                    Sigue la música. Vive la experiencia. Se parte del movimiento. 🔥
+                </p>
+                <p style="color: #7a7a8a; font-size: 0.8rem; margin-top: 1rem;">
+                    Plataforma oficial de música urbana argentina
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script para efectos hover adicionales -->
+    <script>
+        // Efecto hover en tarjetas
+        document.querySelectorAll('.artist-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const overlay = this.querySelector('.overlay-hover');
+                if (overlay) {
+                    overlay.style.opacity = '1';
+                }
+            });
+            card.addEventListener('mouseleave', function() {
+                const overlay = this.querySelector('.overlay-hover');
+                if (overlay) {
+                    overlay.style.opacity = '0';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

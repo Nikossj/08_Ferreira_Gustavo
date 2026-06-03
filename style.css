@@ -1,0 +1,520 @@
+/* ================================================
+   EL UNDER - ESTILOS CON BOOTSTRAP Y TAILWIND
+   Temática: Oscura, Urbana, Neón (Compatible con Bootstrap 5 + Tailwind CSS)
+   ================================================ */
+
+/* ================================================
+   CONFIGURACIÓN GLOBAL Y VARIABLES
+   ================================================ */
+
+:root {
+    /* Colores principales */
+    --color-dark: #0a0e27;
+    --color-darker: #050812;
+    --color-gray-dark: #1a1f3a;
+    --color-gray-light: #2d3142;
+    --color-text: #e0e0e0;
+    --color-text-muted: #9a9aaa;
+    
+    /* Colores neón */
+    --neon-purple: #b300ff;
+    --neon-cyan: #00d9ff;
+    --neon-pink: #ff006e;
+    --neon-green: #39ff14;
+    --neon-blue: #0080ff;
+    
+    /* Efectos */
+    --glow-purple: 0 0 20px rgba(179, 0, 255, 0.5);
+    --glow-cyan: 0 0 20px rgba(0, 217, 255, 0.5);
+    --glow-pink: 0 0 20px rgba(255, 0, 110, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--color-darker) 0%, var(--color-dark) 100%);
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Scroll personalizado */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--neon-purple);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--neon-cyan);
+}
+
+/* ================================================
+   HERO/HEADER SECTION
+   ================================================ */
+
+header {
+    animation: fadeInDown 0.8s ease-out;
+}
+
+header h1 {
+    animation: glow-text 3s ease-in-out infinite;
+}
+
+header p {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* ================================================
+   TARJETAS DE ARTISTAS
+   ================================================ */
+
+.artist-card {
+    animation: slideUp 0.6s ease-out both;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.artist-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 
+        0 0 30px rgba(179, 0, 255, 0.6),
+        0 15px 50px rgba(179, 0, 255, 0.3) !important;
+    border-color: var(--neon-purple) !important;
+}
+
+/* Efectos de hover en imágenes */
+.artist-card img {
+    transition: transform 0.5s ease-out;
+}
+
+.artist-card:hover img {
+    transform: scale(1.1);
+}
+
+.overlay-hover {
+    transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
+}
+
+.artist-card:hover .overlay-hover {
+    opacity: 1 !important;
+    visibility: visible;
+}
+
+/* ================================================
+   BOTONES
+   ================================================ */
+
+button {
+    transition: all 0.3s ease-out;
+    font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:focus-visible {
+    outline: 2px solid var(--neon-cyan);
+    outline-offset: 2px;
+}
+
+/* ================================================
+   ANIMACIONES
+   ================================================ */
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes expand {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100px;
+    }
+}
+
+@keyframes glow-text {
+    0%, 100% {
+        text-shadow: 0 0 30px rgba(179, 0, 255, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 60px rgba(0, 217, 255, 0.8);
+    }
+}
+
+/* ================================================
+   EFECTOS DE FONDO
+   ================================================ */
+
+/* Gradientes dinámicos de fondo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(179, 0, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 217, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ================================================
+   RESPONSIVE DESIGN
+   ================================================ */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .artist-card {
+        border-radius: 0.75rem !important;
+    }
+}
+
+/* Teléfonos pequeños */
+@media (max-width: 480px) {
+    header {
+        padding: 3rem 1rem !important;
+    }
+
+    header h1 {
+        font-size: 2rem !important;
+        letter-spacing: 0.125rem;
+    }
+
+    header p {
+        font-size: 0.95rem !important;
+    }
+
+    .artist-card h3 {
+        font-size: 1.1rem !important;
+    }
+
+    .artist-card p {
+        font-size: 0.85rem !important;
+    }
+
+    button {
+        font-size: 0.9rem !important;
+        padding: 0.625rem 0.875rem !important;
+    }
+
+    footer {
+        padding: 2rem 1rem !important;
+    }
+
+    footer p {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ================================================
+   COMPATIBILIDAD CON BOOTSTRAP 5
+   ================================================ */
+
+.container-xl {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 1200px) {
+    .container-xl {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container-xl {
+        max-width: 1320px;
+    }
+}
+
+/* Grid system Bootstrap compatible */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+}
+
+.row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+}
+
+/* Columnas */
+.col-12 { width: 100%; }
+
+@media (min-width: 576px) {
+    .col-sm-6 { width: 50%; }
+}
+
+@media (min-width: 992px) {
+    .col-lg-4 { width: 33.333333%; }
+}
+
+@media (min-width: 1200px) {
+    .col-xl-3 { width: 25%; }
+}
+
+/* Gap utilities */
+.g-4 {
+    gap: 1.5rem;
+}
+
+.gy-5 {
+    row-gap: 3rem;
+}
+
+/* Position utilities */
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.top-0 { top: 0; }
+.start-0 { left: 0; }
+.w-100 { width: 100%; }
+.h-100 { height: 100%; }
+
+/* Flexbox utilities */
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+/* Text utilities */
+.text-center {
+    text-align: center;
+}
+
+.text-white {
+    color: white;
+}
+
+.font-weight-bold {
+    font-weight: 700;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.mb-0 { margin-bottom: 0; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mb-6 { margin-bottom: 2rem; }
+.mb-16 { margin-bottom: 4rem; }
+.mb-20 { margin-bottom: 5rem; }
+
+.mt-0 { margin-top: 0; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+
+.p-4 { padding: 1.5rem; }
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.rounded {
+    border-radius: 0.375rem;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+/* Border utilities */
+.border {
+    border: 1px solid #dee2e6;
+}
+
+.border-top {
+    border-top: 1px solid #dee2e6;
+}
+
+/* Shadow utilities */
+.shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Display utilities */
+.h-100 {
+    height: 100%;
+}
+
+.object-cover {
+    object-fit: cover;
+}
+
+/* ================================================
+   TAILWIND CSS UTILITIES (COMPATIBILIDAD)
+   ================================================ */
+
+/* Tailwind text sizes */
+.text-sm { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-4xl { font-size: 2.25rem; }
+.text-5xl { font-size: 3rem; }
+.text-7xl { font-size: 4.5rem; }
+
+/* Tailwind tracking (letter-spacing) */
+.tracking-wide { letter-spacing: 0.025em; }
+.tracking-widest { letter-spacing: 0.1em; }
+
+/* Tailwind font weights */
+.font-black { font-weight: 900; }
+.font-bold { font-weight: 700; }
+
+/* Tailwind transitions */
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.duration-300 {
+    transition-duration: 300ms;
+}
+
+.hover\:scale-105:hover {
+    transform: scale(1.05);
+}
+
+.hover\:shadow-purple-500:hover {
+    box-shadow: 0 10px 15px -3px rgba(168, 85, 247, 0.1);
+}
+
+/* ================================================
+   ACCESIBILIDAD
+   ================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Focus visible para accesibilidad */
+*:focus-visible {
+    outline: 2px solid var(--neon-cyan);
+    outline-offset: 2px;
+}
+
+/* ================================================
+   TEMA OSCURO - NEÓN
+   ================================================ */
+
+/* Personalización de inputs si se requiere */
+input:focus,
+textarea:focus,
+select:focus {
+    background: var(--color-gray-dark);
+    color: var(--color-text);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1);
+}
+
+/* Personalización de links */
+a {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+}
+
+a:hover {
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px var(--glow-cyan);
+}
+
